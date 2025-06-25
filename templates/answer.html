@@ -1,0 +1,25 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"> <!--言語の指定-->
+  <head> <!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title>おすすめの旅先</title> <!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/answer.css') }}">
+  </head>
+  <body> <!--ページの見た目を作る部分-->
+    <h1>おすすめの旅先</h1><br>
+    <p><strong>あなたの希望:</strong> {{ user_input }}</p><br><br>
+    
+    {% for rec in recommendation_list %}
+        <div class="recommendation">
+          <br><h2>おすすめその{{ loop.index }} </h2>
+            <h3><strong>場所:{{ rec["場所"] }}</strong> </h3>
+            <p><strong> {{ rec["キャッチコピー"] }}</strong></p>
+            <p>{{ rec["説明"] }}</p><br>
+            <hr>
+        </div>
+    {% endfor %}
+    
+    <br><a href="/">もう一度探す</a>
+    
+  </body>
+</html>

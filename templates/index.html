@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>旅先おすすめフォーム</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/index.css') }}">
+</head>
+<body>
+    <h1>あなたにぴったりの旅先を見つけましょう</h1><br>
+    <p>日本には行っても行ききれないほどのステキな場所がたくさんあります<br><br><strong>じゃあ次はどこに行く？</strong><br><br>旅には出たいけど、どこに行くか迷ってしまう<br>自分の知らない場所に行ってみたい<br>そんなあなたにあなたのための旅先をお勧めします</p><br>
+    <p>やり方は簡単!下のBOXにあなたのやりたいことや、思いついたキーワードを入力するだけ<br>おすすめの場所を3つ提案します</p><br>
+</body>    
+<body>
+    <form method="POST" action="/answer">
+        <label for="query"><h2>どんな旅がしたいですか？</h2></label><br>
+        <textarea name="query" placeholder="例：自然が豊かな場所でリラックスしたい、歴史ある町を歩きたい など" required></textarea><br>
+        <button type="submit">おすすめを探す</button>
+    </form>
+</body>
+</html>
